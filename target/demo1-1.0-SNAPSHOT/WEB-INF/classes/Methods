@@ -1,0 +1,15 @@
+
+pool.setInitialSize(3);  Este método configura el tamaño inicial del pool de conexiones,
+es decir, el número de conexiones que se crearán inicialmente cuando se inicie el pool.
+ En este caso dado, se establece que se crearán inicialmente 3 conexiones.
+
+ pool.setMinIdle(3);  Este método configura la cantidad mínima de conexiones inactivas
+ que el pool de conexiones debe mantener en reserva.
+ Estas conexiones inactivas están listas para ser utilizadas en cualquier momento si la aplicación las necesita
+
+ pool.setMaxIdle(8);  Este método configura la cantidad máxima de conexiones inactivas que el pool de conexiones
+ puede mantener en reserva. Si la cantidad de conexiones inactivas supera este límite,
+ algunas de las conexiones inactivas pueden ser cerradas para liberar recursos
+
+ Estos métodos se utilizan para configurar un "pool" de
+ conexiones en Java, específicamente en el contexto de bases de datos

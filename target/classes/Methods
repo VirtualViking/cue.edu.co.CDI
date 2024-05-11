@@ -1,0 +1,43 @@
+
+pool.setInitialSize(3);  Este método configura el tamaño inicial del pool de conexiones,
+es decir, el número de conexiones que se crearán inicialmente cuando se inicie el pool.
+ En este caso dado, se establece que se crearán inicialmente 3 conexiones.
+
+ pool.setMinIdle(3);  Este método configura la cantidad mínima de conexiones inactivas
+ que el pool de conexiones debe mantener en reserva.
+ Estas conexiones inactivas están listas para ser utilizadas en cualquier momento si la aplicación las necesita
+
+ pool.setMaxIdle(8);  Este método configura la cantidad máxima de conexiones inactivas que el pool de conexiones
+ puede mantener en reserva. Si la cantidad de conexiones inactivas supera este límite,
+ algunas de las conexiones inactivas pueden ser cerradas para liberar recursos
+
+ Estos métodos se utilizan para configurar un "pool" de
+ conexiones en Java, específicamente en el contexto de bases de datos
+
+
+
+● @Dependent se utiliza en el contexto de la Inyección de Dependencias (DI) cuando se está utilizando CDI
+(Contexts and Dependency Injection), que es una parte de la especificación Java EE. @Dependent es el alcance
+predeterminado para un bean gestionado por CDI si no se especifica ningún otro alcance.
+
+
+● @RequestScoped El alcance @RequestScoped significa que el bean gestionado por CDI tendrá una vida útil ligada al
+ ciclo de vida de una solicitud HTTP. En otras palabras, cada vez que se recibe una solicitud HTTP,
+ se crea una instancia del bean anotado con @RequestScoped para manejar esa solicitud específica,
+ y se destruye al finalizar la solicitud.
+
+
+● @SessionScoped El alcance @SessionScoped indica que el bean gestionado por CDI tendrá una vida útil asociada
+ a la sesión de usuario en una aplicación web. Esto significa que una instancia de dicho bean será creada y asociada
+ con la sesión de usuario cuando el usuario inicie sesión en la aplicación, y se mantendrá viva mientras dure
+ la sesión del usuario. Cuando la sesión del usuario finaliza, la instancia del bean @SessionScoped también se destruye.
+ 
+● @ConversationScoped l alcance @ConversationScoped está diseñado para manejar conversaciones de usuario en una
+aplicación web. A diferencia de @RequestScoped y @SessionScoped, que tienen ciclos de vida muy específicos y acotados,
+@ConversationScoped proporciona un ciclo de vida más flexible que abarca múltiples solicitudes HTTP y puede ser utilizado
+ para mantener un estado de conversación coherente durante una serie de interacciones del usuario.
+
+● @ApplicationScoped El alcance @ApplicationScoped indica que el bean gestionado por CDI tendrá una vida útil asociada
+a la aplicación en su conjunto. Esto significa que una única instancia del bean será creada y compartida por toda la
+ aplicación durante su ciclo de vida. Este alcance es útil para componentes que necesitan mantener un estado global y
+  compartirlo entre múltiples usuarios y solicitudes en toda la aplicación
